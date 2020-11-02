@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Styled = styled.div`
-  background-color: #f5f5ff;
+  background-color: #f0f0ff;
   // background-color: light-grey;
 
   .card {
@@ -17,7 +17,7 @@ const Styled = styled.div`
     max-width: 500px;
     height: 100%;
     border: 0;
-    background: #f5f5ff;
+    background: #f0f0ff;
   }
 
   .card:hover {
@@ -91,7 +91,7 @@ const ServiceSummary = () => {
   return (
     <Styled>
       <Container>
-        <Row style={{ marginLeft: 50 }}>
+        <Row>
           <Col>
             <div className="text-center pt-5">
               <h2 className="color-dark thick">Our Services</h2>
@@ -101,7 +101,7 @@ const ServiceSummary = () => {
         </Row>
         <Row className="py-5">
           {serviceData.map(s => (
-            <Col md className="my-1">
+            <Col md className="my-3">
               <SummaryItem service={s} />
             </Col>
           ))}

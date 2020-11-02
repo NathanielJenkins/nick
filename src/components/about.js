@@ -4,7 +4,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import Img from "gatsby-image"
 const Styled = styled.div`
-  background-color: #d9d8fa;
+  background-color: #f0f0ff;
 `
 
 const About = () => {
