@@ -1,5 +1,7 @@
 import React from "react"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import { FaEnvelope, FaPhone } from "react-icons/fa"
+
 import styled from "styled-components"
 
 const Styled = styled.div`
@@ -12,9 +14,27 @@ const Contact = () => {
     <Styled>
       <Container>
         <Row className="pt-4">
+          <Col md>
+            <h3>
+              <FaPhone className="mb-2" /> Phone:{" "}
+              <a href="tel:236-818-6557">(236) 818-6557</a>
+            </h3>
+          </Col>
+          <Col md className="mt-3">
+            <h3>
+              <FaEnvelope className="mb-2" /> Email:{" "}
+              <a href="mailto:hootonnickk@hotmail.com">
+                hootonnickk@hotmail.com
+              </a>
+            </h3>
+          </Col>
+        </Row>
+        <Row className="pt-4">
           <Col md className="my-auto">
             <h3>Contact us to book a time</h3>
-            <p>Something here </p>
+            <p>
+              Please enter your information and we will get back to right away
+            </p>
           </Col>
           <Col md>
             <Form

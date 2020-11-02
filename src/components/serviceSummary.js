@@ -1,17 +1,13 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
-import { FaEye, FaGripLines, FaRegClock } from "react-icons/fa"
-
 const Styled = styled.div`
-  .active {
-    background-color: #d9d8fa;
-  }
-  .grey {
-    background-color: none;
+  background-color: #d9d8fa;
+  .color-dark {
+    color: #180c5b;
   }
 `
 
@@ -41,88 +37,57 @@ const ServiceSummary = () => {
       }
     }
   `)
-
   const serviceData = [
     {
-      title: "Gutters",
-      des: "Information A, information B, information C",
-      icon: <FaEye />,
+      title: "Gutter Cleaning",
+      des: `
+        There’s no short cut to good old-fashioned hard work! I take safety very seriously, 
+        using all the best equipment that allows us to complete jobs both safely and effectively.
+      `,
       img: data.gutters.childImageSharp.fluid,
     },
     {
-      title: "Windows",
-      des: "Information A, information B, information C",
-      icon: <FaGripLines />,
+      title: "Window Washing",
+      des: `
+        From the classic squeegee, to advanced water fed poles, my team is 
+        fully equipped with all the tools and expertise to handle all your window washing needs.
+      `,
       img: data.windows.childImageSharp.fluid,
     },
     {
-      title: "Pressure Washing",
-      des: "Information A, information B, information C",
-      icon: <FaRegClock />,
+      title: "Power Washing",
+      des: `
+        We have the highest quality, industry leading Honda pressure 
+        washers rated at 4000 PSI. My team is highly trained at working 
+        with these heavy-duty pressure washers`,
       img: data.pressure.childImageSharp.fluid,
     },
   ]
 
-  //switch the photos with setInterval
-  const [imageIndex, setImageIndex] = useState(0)
-
-  useEffect(() => {
-    setTimeout(() => {
-      if (imageIndex >= serviceData.length - 1) {
-        setImageIndex(0)
-      } else {
-        setImageIndex(imageIndex + 1)
-      }
-    }, 4000)
-  }, [imageIndex, serviceData.length])
-
   return (
     <Styled>
       <Container>
-        <Row>
-          <Col>
-            <h2 className="text-center mb-3">Our Services</h2>
-            <hr />
-          </Col>
-        </Row>
-        <Row>
-          <Col md={6} className="my-auto">
-            <Img
-              className="shadow rounded mb-4"
-              fluid={serviceData[imageIndex].img}
-            />
-          </Col>
-          <Col md={6}>
-            {serviceData.map((data, index) => {
-              return (
-                <SummaryItem
-                  data={data}
-                  background={index === imageIndex ? "active" : "grey"}
-                  key={index}
-                />
-              )
-            })}
-          </Col>
+        <Row className="py-5">
+          {serviceData.map(s => (
+            <Col md className="my-1">
+              <SummaryItem service={s} />
+            </Col>
+          ))}
         </Row>
       </Container>
     </Styled>
   )
 }
 
-const SummaryItem = ({ data, background, onClick }) => {
+const SummaryItem = ({ service }) => {
   return (
-    <Row className="mb-2">
-      <Col>
-        <div className={`summary-item p-2 rounded ${background}`}>
-          <h6>
-            <span style={{ color: "#444EA0" }}>
-              {data.icon} {data.title}
-            </span>
-          </h6>
-          <span style={{ fontSize: "15px", color: "grey" }}>{data.des}</span>
-        </div>
-      </Col>
-    </Row>
+    <div className="p-2">
+      <Img className="rounded shadow" fluid={service.img} />
+      <div className="text-center mt-3">
+        <h3 className="color-dark">{service.title}</h3>
+        <p className="color-dark text-justify">{service.des}</p>
+      </div>
+    </div>
   )
 }
 
