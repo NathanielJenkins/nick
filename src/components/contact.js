@@ -14,7 +14,7 @@ const Contact = () => {
     <Styled>
       <Container>
         <Row className="pt-4">
-          <Col md>
+          <Col md className="mt-3">
             <h3>
               <FaPhone className="mb-2" /> Phone:{" "}
               <a href="tel:236-818-6557">(236) 818-6557</a>
@@ -33,7 +33,8 @@ const Contact = () => {
           <Col md className="my-auto">
             <h3>Contact us to book a time</h3>
             <p>
-              Please enter your information and we will get back to right away
+              Please enter your information and we will get back to you right
+              away
             </p>
           </Col>
           <Col md>

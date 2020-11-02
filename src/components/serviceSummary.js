@@ -1,13 +1,37 @@
 import React from "react"
-import { Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col, Card } from "react-bootstrap"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Styled = styled.div`
-  background-color: #d9d8fa;
-  .color-dark {
-    color: #180c5b;
+  background-color: #f5f5ff;
+  // background-color: light-grey;
+
+  .card {
+    margin: auto;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: all 0.2s;
+    // box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 500px;
+    height: 100%;
+    border: 0;
+    background: #f5f5ff;
+  }
+
+  .card:hover {
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
+    transform: translate(0px, -5px);
+    .blue-square {
+      background: #180c5b;
+    }
+  }
+  .blue-square {
+    transition: all 0.2s;
+    border-radius: 10px 10px 0 0;
+    width: 100px;
+    height: 15px;
   }
 `
 
@@ -39,14 +63,6 @@ const ServiceSummary = () => {
   `)
   const serviceData = [
     {
-      title: "Gutter Cleaning",
-      des: `
-        There’s no short cut to good old-fashioned hard work! I take safety very seriously, 
-        using all the best equipment that allows us to complete jobs both safely and effectively.
-      `,
-      img: data.gutters.childImageSharp.fluid,
-    },
-    {
       title: "Window Washing",
       des: `
         From the classic squeegee, to advanced water fed poles, my team is 
@@ -62,11 +78,27 @@ const ServiceSummary = () => {
         with these heavy-duty pressure washers`,
       img: data.pressure.childImageSharp.fluid,
     },
+    {
+      title: "Gutter Cleaning",
+      des: `
+        There’s no short cut to good old-fashioned hard work! I take safety very seriously, 
+        using all the best equipment that allows us to complete jobs both safely and effectively.
+      `,
+      img: data.gutters.childImageSharp.fluid,
+    },
   ]
 
   return (
     <Styled>
       <Container>
+        <Row style={{ marginLeft: 50 }}>
+          <Col>
+            <div className="text-center pt-5">
+              <h2 className="color-dark thick">Our Services</h2>
+              <h6>We provide best services for our customers</h6>
+            </div>
+          </Col>
+        </Row>
         <Row className="py-5">
           {serviceData.map(s => (
             <Col md className="my-1">
@@ -81,13 +113,14 @@ const ServiceSummary = () => {
 
 const SummaryItem = ({ service }) => {
   return (
-    <div className="p-2">
-      <Img className="rounded shadow" fluid={service.img} />
-      <div className="text-center mt-3">
-        <h3 className="color-dark">{service.title}</h3>
-        <p className="color-dark text-justify">{service.des}</p>
+    <Card>
+      <Img className="img-cover rounded" fluid={service.img} />
+      <div className="p-3 text-center">
+        <h4 className="color-dark pb-2">{service.title}</h4>
+        <p className="color-dark  text-justify">{service.des}</p>
       </div>
-    </div>
+      <div className="mx-auto blue-square" />
+    </Card>
   )
 }
 

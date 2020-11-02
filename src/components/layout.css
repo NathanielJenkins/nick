@@ -22,6 +22,18 @@ body {
 .color-dark {
   color: #180c5b;
 }
+
+.color-white {
+  color: white;
+}
+
+.color-grey {
+  color: grey;
+}
+
+.thick {
+  font-weight: 900;
+}
 article,
 aside,
 details,
