@@ -19,7 +19,8 @@ const Styled = styled.div`
 const Header = () => {
   return (
     <Styled>
-      <Navbar>
+      <Navbar expand="md">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Link className="ml-auto" to="/">
           <Navbar.Brand>
             <img
@@ -31,20 +32,21 @@ const Header = () => {
             />
           </Navbar.Brand>
         </Link>
-
-        <Nav className="mx-auto">
-          <Link className="nav-link" to="/">
-            Home
-          </Link>
-          <Link className="nav-link" to="/about">
-            About
-          </Link>
-        </Nav>
-        <Nav className="mr-auto">
-          <Link className="btn btn-danger" to="/contact">
-            Contact
-          </Link>
-        </Nav>
+        <Navbar.Collapse>
+          <Nav className="mx-auto">
+            <Link className="nav-link" to="/">
+              Home
+            </Link>
+            <Link className="nav-link" to="/about">
+              About
+            </Link>
+          </Nav>
+          <Nav>
+            <Link className="btn btn-danger" to="/contact">
+              Contact
+            </Link>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     </Styled>
   )
