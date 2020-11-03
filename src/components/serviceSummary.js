@@ -3,6 +3,7 @@ import { Container, Row, Col, Card } from "react-bootstrap"
 import styled from "styled-components"
 import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
+import { FaRegHeart } from "react-icons/fa"
 
 const Styled = styled.div`
   background-color: #f0f0ff;
@@ -24,7 +25,7 @@ const Styled = styled.div`
     box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.5);
     transform: translate(0px, -5px);
     .blue-square {
-      background: #180c5b;
+      background: #4a2e6f;
     }
   }
   .blue-square {
@@ -75,13 +76,13 @@ const ServiceSummary = () => {
       des: `
         We have the highest quality, industry leading Honda pressure 
         washers rated at 4000 PSI. My team is highly trained at working 
-        with these heavy-duty pressure washers`,
+        with these heavy-duty pressure washers.`,
       img: data.pressure.childImageSharp.fluid,
     },
     {
       title: "Gutter Cleaning",
       des: `
-        There’s no short cut to good old-fashioned hard work! I take safety very seriously, 
+        There is no short cut to good old-fashioned hard work! I take safety very seriously, 
         using all the best equipment that allows us to complete jobs both safely and effectively.
       `,
       img: data.gutters.childImageSharp.fluid,
@@ -94,8 +95,16 @@ const ServiceSummary = () => {
         <Row>
           <Col>
             <div className="text-center pt-5">
-              <h2 className="color-dark thick">Our Services</h2>
-              <h6>We provide best services for our customers</h6>
+              <h2 className="color-dark thin-2">Our Promise</h2>
+
+              <h6 className="thin-3">
+                We're a local company that's dedicated to providing a positive
+                impact to the community. With a small crew you know that every
+                experience with Clean Haven will have a personal touch.
+              </h6>
+              <h3>
+                <FaRegHeart className="color-dark" />
+              </h3>
             </div>
           </Col>
         </Row>
@@ -116,7 +125,7 @@ const SummaryItem = ({ service }) => {
     <Card>
       <Img className="img-cover rounded" fluid={service.img} />
       <div className="p-3 text-center">
-        <h4 className="color-dark pb-2">{service.title}</h4>
+        <h4 className="color-dark pb-2 thin-3">{service.title}</h4>
         <p className="color-dark  text-justify">{service.des}</p>
       </div>
       <div className="mx-auto blue-square" />

@@ -1,11 +1,11 @@
 import React from "react"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
-import { FaEnvelope, FaPhone } from "react-icons/fa"
+import { FaEnvelope, FaPhone, FaChild } from "react-icons/fa"
 
 import styled from "styled-components"
 
 const Styled = styled.div`
-  background-color: #180c5b;
+  background-color: #4a2e6f;
   color: white;
 `
 
@@ -31,10 +31,13 @@ const Contact = () => {
         </Row>
         <Row className="pt-4">
           <Col md className="my-auto">
-            <h3>Contact us to book a time</h3>
+            <h3>
+              <FaChild className="mb-2" />
+              Contact us for a free quote!
+            </h3>
             <p>
               Please enter your information and we will get back to you right
-              away
+              away!
             </p>
           </Col>
           <Col md>

@@ -34,6 +34,28 @@ body {
 .thick {
   font-weight: 900;
 }
+.thin-1 {
+  font-weight: 100;
+}
+.thin-2 {
+  font-weight: 200;
+}
+.thin-3 {
+  font-weight: 300;
+}
+
+.hr-thick {
+  border-radius: 10px;
+  width: 200px;
+  height: 5px;
+  background-color: #4a2e6f;
+}
+.hr-thin-white {
+  border-radius: 10px;
+  width: 200px;
+  height: 1px;
+  background-color: white;
+}
 article,
 aside,
 details,

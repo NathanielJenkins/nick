@@ -1,6 +1,8 @@
 import React from "react"
 import { Container, Row, Col } from "react-bootstrap"
 import styled from "styled-components"
+import Img from "gatsby-image"
+import { graphql, useStaticQuery } from "gatsby"
 
 const Styled = styled.div`
   .grey-text {
@@ -12,19 +14,46 @@ const Styled = styled.div`
   .header-image-container {
     height: 200px;
   }
+  .text-container {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .img-banner {
+    height: 300px;
+  }
 `
 
 const Banner = () => {
+  const data = useStaticQuery(graphql`
+    query bannerQuery {
+      banner: file(relativePath: { eq: "banner.jpg" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
   return (
     <Styled>
-      <Container className="mt-4">
+      <Container className="p-0" fluid>
         <Row>
-          <Col md={{ size: 6, order: 1 }} className="mb-5">
-            <div className="text-center">
-              <h1 style={{ color: "#444EA0" }} className="display-1">
+          <Col>
+            <Img
+              className="img-banner"
+              fluid={data.banner.childImageSharp.fluid}
+            />
+
+            <div className="text-container text-center mx-auto color-white">
+              <h1 style={{ fontSize: 70 }} className="thin-1">
                 Clean Haven
               </h1>
-              <h3>House Detailing</h3>
+              <div className="hr-thin-white mx-auto" />
+              <h3 className="thin-2 mt-4">House Detailing</h3>
             </div>
           </Col>
         </Row>
