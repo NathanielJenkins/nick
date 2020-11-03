@@ -17,13 +17,15 @@ const Contact = () => {
           <Col md className="mt-3">
             <h3>
               <FaPhone className="mb-2" /> Phone:{" "}
-              <a href="tel:236-818-6557">(236) 818-6557</a>
+              <a className="thick" href="tel:236-818-6557">
+                (236) 818-6557
+              </a>
             </h3>
           </Col>
           <Col md className="mt-3">
             <h3>
               <FaEnvelope className="mb-2" /> Email:{" "}
-              <a href="mailto:hootonnickk@hotmail.com">
+              <a className="thick" href="mailto:hootonnickk@hotmail.com">
                 hootonnickk@hotmail.com
               </a>
             </h3>

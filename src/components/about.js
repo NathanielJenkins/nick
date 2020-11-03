@@ -35,7 +35,7 @@ const About = () => {
             </div>
           </Col>
           <Col className="p-4" lg={8}>
-            <h1 className="display-4 text-center color-dark">About</h1>
+            <h1 className="text-center color-dark">About</h1>
             <div className="hr-thick mx-auto mb-3 " />
             <p className="text-justify color-dark ">
               Hi! My name is Nick Hooton and I’m the owner of Clean Haven.

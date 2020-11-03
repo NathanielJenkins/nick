@@ -49,7 +49,7 @@ const Banner = () => {
             />
 
             <div className="text-container text-center mx-auto color-white">
-              <h1 style={{ fontSize: 70 }} className="thin-1">
+              <h1 style={{ fontSize: 70 }} className="thin-12">
                 Clean Haven
               </h1>
               <div className="hr-thin-white mx-auto" />

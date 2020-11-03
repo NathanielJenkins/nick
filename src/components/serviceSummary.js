@@ -82,7 +82,7 @@ const ServiceSummary = () => {
     {
       title: "Gutter Cleaning",
       des: `
-        There is no short cut to good old-fashioned hard work! I take safety very seriously, 
+        There is no short cut to good old-fashioned hard work! We take safety very seriously, 
         using all the best equipment that allows us to complete jobs both safely and effectively.
       `,
       img: data.gutters.childImageSharp.fluid,
@@ -95,10 +95,10 @@ const ServiceSummary = () => {
         <Row>
           <Col>
             <div className="text-center pt-5">
-              <h2 className="color-dark thin-2">Our Promise</h2>
+              <h2 className="color-dark">Our Promise</h2>
 
-              <h6 className="thin-3">
-                We're a local company that's dedicated to providing a positive
+              <h6>
+                We're a local company that is dedicated to providing a positive
                 impact to the community. With a small crew you know that every
                 experience with Clean Haven will have a personal touch.
               </h6>
@@ -125,7 +125,7 @@ const SummaryItem = ({ service }) => {
     <Card>
       <Img className="img-cover rounded" fluid={service.img} />
       <div className="p-3 text-center">
-        <h4 className="color-dark pb-2 thin-3">{service.title}</h4>
+        <h4 className="color-dark pb-2">{service.title}</h4>
         <p className="color-dark  text-justify">{service.des}</p>
       </div>
       <div className="mx-auto blue-square" />
