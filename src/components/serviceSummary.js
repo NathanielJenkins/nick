@@ -108,7 +108,7 @@ const ServiceSummary = () => {
             </div>
           </Col>
         </Row>
-        <Row className="py-5">
+        <Row className="py-3">
           {serviceData.map(s => (
             <Col md className="my-3">
               <SummaryItem service={s} />

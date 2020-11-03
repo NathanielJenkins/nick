@@ -26,14 +26,14 @@ const Header = () => {
             <img
               alt=""
               src={logo}
-              width="50"
-              height="50"
-              className="d-inline-block mt-3"
+              width="40"
+              height="40"
+              className="d-inline-block my-auto"
             />
           </Navbar.Brand>
         </Link>
         <Navbar.Collapse>
-          <Nav className="mx-auto">
+          <Nav className="mx-auto m0">
             <Link className="nav-link" to="/">
               Home
             </Link>

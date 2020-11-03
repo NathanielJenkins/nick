@@ -27,7 +27,7 @@ const Banner = () => {
     query bannerQuery {
       banner: file(relativePath: { eq: "banner.jpg" }) {
         childImageSharp {
-          fixed(height: 400) {
+          fixed(height: 347) {
             ...GatsbyImageSharpFixed
           }
         }
