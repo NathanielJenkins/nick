@@ -20,6 +20,9 @@ const Styled = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
   }
+  .banner {
+    height: 300px;
+  }
 `
 
 const Banner = () => {
@@ -27,7 +30,7 @@ const Banner = () => {
     query bannerQuery {
       banner: file(relativePath: { eq: "banner.jpg" }) {
         childImageSharp {
-          fixed(height: 347) {
+          fixed(quality: 100, height: 800) {
             ...GatsbyImageSharpFixed
           }
         }
@@ -40,7 +43,12 @@ const Banner = () => {
       <Container className="p-0" fluid>
         <Row>
           <Col className="mx-auto">
-            <Img className="" fixed={data.banner.childImageSharp.fixed} />
+            <div className="banner">
+              <Img
+                className="img-fluid h-100 w-100"
+                fixed={data.banner.childImageSharp.fixed}
+              />
+            </div>
 
             <div className="text-container text-center mx-auto color-white">
               <h1 style={{ fontSize: 70 }} className="thin-12">
