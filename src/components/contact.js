@@ -25,8 +25,8 @@ const Contact = () => {
           <Col md className="mt-3">
             <h3>
               <FaEnvelope className="mb-2" /> Email:{" "}
-              <a className="thick" href="mailto:hootonnickk@hotmail.com">
-                hootonnickk@hotmail.com
+              <a className="thick" href="mailto:nick@cleanhaven.ca">
+                nick@cleanhaven.ca
               </a>
             </h3>
           </Col>
