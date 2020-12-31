@@ -17,8 +17,8 @@ const Contact = () => {
           <Col md className="mt-3">
             <h3>
               <FaPhone className="mb-2" /> Phone:{" "}
-              <a className="thick" href="tel:236-818-6557">
-                (236) 818-6557
+              <a className="thick" href="tel:6043492280">
+                (604) 349-2280
               </a>
             </h3>
           </Col>
