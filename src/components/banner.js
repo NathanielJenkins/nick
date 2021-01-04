@@ -5,23 +5,21 @@ import Img from "gatsby-image"
 import { graphql, useStaticQuery } from "gatsby"
 
 const Styled = styled.div`
-  .grey-text {
-    color: grey;
-  }
-  .small-text {
-    font-size: 12px;
-  }
-  .header-image-container {
-    height: 200px;
-  }
   .text-container {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 500px;
   }
   .banner {
-    height: 300px;
+    height: 380px;
+  }
+
+  @media only screen and (max-width: 576px) {
+    .text-container {
+      width: 280px;
+    }
   }
 `
 
@@ -32,6 +30,13 @@ const Banner = () => {
         childImageSharp {
           fixed(height: 800) {
             ...GatsbyImageSharpFixed
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logo-white.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -50,12 +55,10 @@ const Banner = () => {
               />
             </div>
 
-            <div className="text-container text-center mx-auto color-white">
-              <h1 style={{ fontSize: 70 }} className="thin-12">
-                Clean Haven
-              </h1>
-              <div className="hr-thin-white mx-auto" />
-              <h3 className="thin-2 mt-4">House Detailing</h3>
+            <div className="text-container mx-auto">
+              <Img fluid={data.logo.childImageSharp.fluid} className="" />
+              {/* <div className="hr-thin-white mx-auto" />
+              <h3 className="thin-2 mt-4">House Detailing</h3> */}
             </div>
           </Col>
         </Row>

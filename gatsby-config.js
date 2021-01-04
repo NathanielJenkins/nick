@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Clean Haven`,
-    description: ``,
+    description: `Vancouver based window washing, power washing, gutter cleaning, house detailing company`,
     author: `@</Vec>`,
   },
   plugins: [

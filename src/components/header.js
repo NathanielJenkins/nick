@@ -3,30 +3,45 @@ import { Navbar, Nav } from "react-bootstrap"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
-import logo from "../images/logo.png"
+import logo from "../images/logo-white.png"
 
 const Styled = styled.div`
   .nav-link {
-    color: black !important;
+    color: white !important;
     padding-right: 25px !important;
     padding-left: 25px !important;
   }
   .nav-link:hover {
     color: grey !important;
   }
+  .navbar {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    color: white;
+    width: 100%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .navbar {
+      background-color: #4a2e6f;
+      position: static;
+      color: black;
+    }
+  }
 `
 
 const Header = () => {
   return (
     <Styled>
-      <Navbar expand="md">
+      <Navbar variant="dark" expand="md">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Link className="ml-auto" to="/">
           <Navbar.Brand>
             <img
               alt=""
               src={logo}
-              width="40"
               height="40"
               className="d-inline-block my-auto"
             />
