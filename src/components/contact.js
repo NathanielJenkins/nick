@@ -13,7 +13,16 @@ const Contact = () => {
   return (
     <Styled>
       <Container>
-        <Row className="pt-4">
+        <Row className="py-4">
+          <Col>
+            <h1 className="text-center">Contact</h1>
+            <div
+              style={{ backgroundColor: "white" }}
+              className="hr-thick mx-auto mb-3 "
+            />
+          </Col>
+        </Row>
+        <Row>
           <Col md className="mt-3">
             <h3>
               <FaPhone className="mb-2" /> Phone:{" "}

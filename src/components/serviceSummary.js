@@ -95,12 +95,14 @@ const ServiceSummary = () => {
         <Row>
           <Col>
             <div className="text-center pt-5">
-              <h2 className="color-dark">Our Promise</h2>
+              <h1 className="color-dark">Our Promise</h1>
+              <div className="hr-thick mx-auto mb-3 " />
 
               <h6>
-                We're a local company that is dedicated to providing a positive
-                impact to the community. With a small crew you know that every
-                experience with Clean Haven will have a personal touch.
+                We're a local North Vancouver company that is dedicated to
+                providing a positive impact to the community. With a small crew
+                you know that every experience with Clean Haven will have a
+                personal touch.
               </h6>
               <h3>
                 <FaRegHeart className="color-dark" />
@@ -123,7 +125,11 @@ const ServiceSummary = () => {
 const SummaryItem = ({ service }) => {
   return (
     <Card>
-      <Img className="img-cover rounded" fluid={service.img} />
+      <Img
+        alt={service.des}
+        className="img-cover rounded"
+        fluid={service.img}
+      />
       <div className="p-3 text-center">
         <h4 className="color-dark pb-2">{service.title}</h4>
         <p className="color-dark  text-justify">{service.des}</p>

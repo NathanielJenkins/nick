@@ -7,7 +7,10 @@ import Contact from "../components/contact"
 const ContactPage = () => {
   return (
     <Layout>
-      <SEO title="Contact" />
+      <SEO
+        title="Contact"
+        description="Contact section for Clean Haven. Call, email or enter your information into the form"
+      />
       <Contact />
     </Layout>
   )

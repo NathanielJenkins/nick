@@ -28,6 +28,7 @@ const About = () => {
               className="mx-auto rounded-circle shadow"
               fluid={data.profile.childImageSharp.fluid}
               style={{ maxWidth: 500 }}
+              alt="profile"
             />
             <div className="mx-auto text-center">
               <h4 className="mt-3 color-dark ">Nick Hooton</h4>

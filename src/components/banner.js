@@ -16,9 +16,9 @@ const Styled = styled.div`
     height: 380px;
   }
 
-  @media only screen and (max-width: 576px) {
+  @media only screen and (max-width: 768px) {
     .text-container {
-      width: 280px;
+      width: 80%;
     }
   }
 `
@@ -50,13 +50,18 @@ const Banner = () => {
           <Col className="mx-auto">
             <div className="banner">
               <Img
+                alt="banner"
                 className="img-fluid h-100 w-100"
                 fixed={data.banner.childImageSharp.fixed}
               />
             </div>
 
             <div className="text-container mx-auto">
-              <Img fluid={data.logo.childImageSharp.fluid} className="" />
+              <Img
+                alt="logo"
+                fluid={data.logo.childImageSharp.fluid}
+                className=""
+              />
               {/* <div className="hr-thin-white mx-auto" />
               <h3 className="thin-2 mt-4">House Detailing</h3> */}
             </div>

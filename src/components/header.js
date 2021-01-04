@@ -40,7 +40,7 @@ const Header = () => {
         <Link className="ml-auto" to="/">
           <Navbar.Brand>
             <img
-              alt=""
+              alt="logo brand"
               src={logo}
               height="40"
               className="d-inline-block my-auto"
