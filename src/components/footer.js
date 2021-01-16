@@ -9,13 +9,14 @@ const Styled = styled.div`
 `
 
 const Footer = () => {
+  const year = new Date().getFullYear()
   return (
     <Styled>
       <Container className="p-2">
         <Row>
           <Col>
             <span className="float-right">
-              <FaRegCopyright /> Clean Haven 2020
+              <FaRegCopyright /> Clean Haven {year}
             </span>
           </Col>
         </Row>

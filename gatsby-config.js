@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Clean Haven North Vancouver Based Window Washing, Power Washing, Gutter Cleaning, House Detailing Company`,
+    title: `Clean Haven North Vancouver House Detailing`,
     description: `Vancouver based window washing, power washing, gutter cleaning, house detailing company`,
     author: `@</Vec>`,
     siteUrl: "https://www.cleanhaven.ca",
@@ -46,6 +46,10 @@ module.exports = {
       "Professional Window Cleaners",
       "Residential Window Cleaning",
       "Commercial Window Cleaning",
+      "Cleaning",
+      "Business",
+      "Windows North Vancouver",
+      "Nick Hooton",
     ],
   },
   plugins: [

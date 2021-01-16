@@ -94,8 +94,8 @@ const ServiceSummary = () => {
       <Container>
         <Row>
           <Col>
-            <div className="text-center pt-5">
-              <h1 className="color-dark">Our Promise</h1>
+            <div className="text-center py-5">
+              <h1 className="color-dark">Clean Haven House Detailing</h1>
               <div className="hr-thick mx-auto mb-3 " />
 
               <h6>
@@ -110,7 +110,13 @@ const ServiceSummary = () => {
             </div>
           </Col>
         </Row>
-        <Row className="py-3">
+
+        <Row>
+          <Col className="text-center">
+            <h2>Our Services</h2>
+          </Col>
+        </Row>
+        <Row className="pb-3">
           {serviceData.map(s => (
             <Col md className="my-3">
               <SummaryItem service={s} />
@@ -131,7 +137,7 @@ const SummaryItem = ({ service }) => {
         fluid={service.img}
       />
       <div className="p-3 text-center">
-        <h4 className="color-dark pb-2">{service.title}</h4>
+        <h3 className="color-dark pb-2">{service.title}</h3>
         <p className="color-dark  text-justify">{service.des}</p>
       </div>
       <div className="mx-auto blue-square" />
