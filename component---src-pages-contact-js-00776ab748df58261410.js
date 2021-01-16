@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[8],{"Cuy+":function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),o=t.n(a),r=t("Bl7J"),l=t("vrFN"),i=t("PqyB");n.default=function(){return o.a.createElement(r.a,null,o.a.createElement(l.a,{title:"Contact",description:"Contact section for Clean Haven. Call, email or enter your information into the form"}),o.a.createElement(i.a,null))}}}]);
+//# sourceMappingURL=component---src-pages-contact-js-00776ab748df58261410.js.map
