@@ -94,7 +94,7 @@ const ServiceSummary = () => {
       <Container>
         <Row>
           <Col>
-            <div className="text-center py-5">
+            <div className="text-center py-4">
               <h1 className="color-dark">Clean Haven House Detailing</h1>
               <div className="hr-thick mx-auto mb-3 " />
 
