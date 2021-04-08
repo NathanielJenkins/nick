@@ -74,6 +74,12 @@ const Contact = () => {
                 <Form.Text className="text-muted">
                   We'll never share your email with anyone else.
                 </Form.Text>
+                <Form.Label>Phone number</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="phone"
+                  placeholder="Enter phone"
+                />
               </Form.Group>
               <Form.Group>
                 <Form.Label>Message</Form.Label>
