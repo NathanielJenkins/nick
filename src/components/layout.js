@@ -7,6 +7,7 @@ import Footer from "./footer"
 import Banner from "./banner"
 import "./layout.css"
 import "bootstrap/dist/css/bootstrap.min.css"
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,11 +22,13 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
-      <Banner />
+      <GoogleReCaptchaProvider reCaptchaKey="6LdgOuMgAAAAAIHk_0fYzcgr06nFXHsKl0DkJVM-">
+        <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+        <Banner />
 
-      <main>{children}</main>
-      <Footer />
+        <main>{children}</main>
+        <Footer />
+      </GoogleReCaptchaProvider>
     </>
   )
 }

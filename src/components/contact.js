@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useRef } from "react"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
 import { FaEnvelope, FaPhone, FaChild } from "react-icons/fa"
-
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3"
+import { useCallback, useEffect } from "react"
 import styled from "styled-components"
 
 const Styled = styled.div`
@@ -10,6 +11,55 @@ const Styled = styled.div`
 `
 
 const Contact = () => {
+  const { executeRecaptcha } = useGoogleReCaptcha()
+
+  const token = useRef()
+
+  // Create an event handler so you can call the verification on button click event or form submit
+  const handleReCaptchaVerify = useCallback(
+    async e => {
+      if (!executeRecaptcha) {
+        console.log("Execute recaptcha not yet available")
+        return
+      }
+
+      token.current = await executeRecaptcha("yourAction")
+    },
+    [executeRecaptcha]
+  )
+
+  const handleSubmit = async e => {
+    e.preventDefault()
+
+    var form = document.createElement("form")
+    form.method = "POST"
+    form.action = "https://getform.io/f/7669118c-5d53-4819-a390-7cf3fa5c1bd1"
+    const createInput = (name, type, value) => {
+      const input = document.createElement("input")
+      input.name = name
+      input.type = type
+      input.value = value
+      form.appendChild(input)
+    }
+
+    const formData = new FormData(e.target)
+    const formProps = Object.fromEntries(formData)
+    Object.entries(formProps).forEach(([k, v]) => {
+      createInput(k, "text", v)
+    })
+
+    if (!token.current) token.current = await executeRecaptcha("yourAction")
+    createInput("g-recaptcha-response", "text", token.current)
+
+    document.body.appendChild(form)
+    form.submit()
+    form.remove()
+  }
+
+  // You can use useEffect to trigger the verification as soon as the component being loaded
+  useEffect(() => {
+    handleReCaptchaVerify()
+  }, [handleReCaptchaVerify])
   return (
     <Styled>
       <Container>
@@ -52,10 +102,7 @@ const Contact = () => {
             </p>
           </Col>
           <Col md>
-            <Form
-              action="https://getform.io/f/a4c92a4d-08df-4734-99a8-c0fb162dd16a"
-              method="POST"
-            >
+            <Form onSubmit={handleSubmit}>
               <Form.Group>
                 <Form.Group>
                   <Form.Label>Name</Form.Label>
@@ -90,6 +137,7 @@ const Contact = () => {
                   rows={3}
                 />
               </Form.Group>
+
               <Button variant="danger" type="submit">
                 Submit
               </Button>
