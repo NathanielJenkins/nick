@@ -33,7 +33,7 @@ const Contact = () => {
 
     var form = document.createElement("form")
     form.method = "POST"
-    form.action = "https://getform.io/f/7669118c-5d53-4819-a390-7cf3fa5c1bd1"
+    form.action = "https://getform.io/f/a4c92a4d-08df-4734-99a8-c0fb162dd16a"
     const createInput = (name, type, value) => {
       const input = document.createElement("input")
       input.name = name
